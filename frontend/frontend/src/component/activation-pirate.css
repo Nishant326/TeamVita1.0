@@ -1,0 +1,310 @@
+
+.activation-pirate-page {
+  --pirate-navy: #10263f;
+  --pirate-deep: #091725;
+  --pirate-gold: #c89b3c;
+  --pirate-parchment: #f4ebdd;
+  --pirate-ivory: #fffdf8;
+  --pirate-green: #1c5948;
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 18px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, #234460 0, transparent 35%),
+    radial-gradient(circle at 90% 85%, #173c3b 0, transparent 30%),
+    var(--pirate-deep);
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.activation-pirate-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  background-image: radial-gradient(
+    circle,
+    var(--pirate-gold) 1px,
+    transparent 1.5px
+  );
+  background-size: 46px 46px;
+}
+
+.activation-pirate-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 590px;
+  padding: 34px 40px;
+  border: 1px solid rgba(200, 155, 60, 0.55);
+  border-radius: 8px;
+  background: var(--pirate-parchment);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+}
+
+.activation-pirate-back {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: var(--pirate-navy);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.activation-pirate-back:hover {
+  color: var(--pirate-green);
+}
+
+.activation-pirate-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-bottom: 29px;
+}
+
+.activation-pirate-emblem {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  color: var(--pirate-gold);
+  background: var(--pirate-navy);
+  border: 2px solid var(--pirate-gold);
+  border-radius: 50%;
+}
+
+.activation-pirate-brand-name {
+  display: block;
+  color: var(--pirate-navy);
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.activation-pirate-brand-subtitle {
+  display: block;
+  margin-top: 3px;
+  color: #6d6557;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.activation-pirate-heading {
+  margin-bottom: 23px;
+  text-align: center;
+}
+
+.activation-pirate-eyebrow {
+  color: #856522;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.activation-pirate-heading h1 {
+  margin: 10px 0;
+  color: var(--pirate-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(26px, 5vw, 34px);
+  font-weight: 700;
+}
+
+.activation-pirate-heading p {
+  margin: 0;
+  color: #706b61;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.activation-pirate-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 23px;
+  padding: 13px;
+  border: 1px solid #d8c69f;
+  border-radius: 5px;
+  color: var(--pirate-navy);
+  background: rgba(255, 253, 248, 0.65);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.activation-pirate-notice svg {
+  flex-shrink: 0;
+  color: var(--pirate-green);
+}
+
+.activation-pirate-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.activation-pirate-field {
+  min-width: 0;
+  margin-bottom: 17px;
+}
+
+.activation-pirate-field label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--pirate-navy);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.activation-pirate-field input {
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  padding: 11px 12px;
+  border: 1px solid #d3c8b5;
+  border-radius: 4px;
+  outline: none;
+  color: var(--pirate-deep);
+  background: var(--pirate-ivory);
+  font: inherit;
+  font-size: 13px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.activation-pirate-field input:focus {
+  border-color: var(--pirate-gold);
+  box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.17);
+}
+
+.activation-pirate-field input::placeholder {
+  color: #a29a8d;
+}
+
+.activation-pirate-password {
+  position: relative;
+}
+
+.activation-pirate-password input {
+  padding-right: 44px;
+}
+
+.activation-pirate-eye {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  transform: translateY(-50%);
+  border: none;
+  color: #6e746f;
+  background: transparent;
+  cursor: pointer;
+}
+
+.activation-pirate-eye:hover {
+  color: var(--pirate-green);
+}
+
+.activation-pirate-submit {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 5px;
+  border: 1px solid var(--pirate-gold);
+  border-radius: 4px;
+  color: var(--pirate-ivory);
+  background: var(--pirate-navy);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.activation-pirate-submit:hover:not(:disabled) {
+  background: var(--pirate-green);
+  transform: translateY(-1px);
+}
+
+.activation-pirate-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.activation-pirate-login {
+  margin: 20px 0 0;
+  text-align: center;
+  color: #706b61;
+  font-size: 12px;
+}
+
+.activation-pirate-login a {
+  color: var(--pirate-green);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.activation-pirate-login a:hover {
+  text-decoration: underline;
+}
+
+.activation-pirate-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  padding-top: 17px;
+  border-top: 1px solid #ded2bd;
+  color: #85734f;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.activation-pirate-footer span {
+  color: var(--pirate-gold);
+}
+
+@media (max-width: 520px) {
+  .activation-pirate-page {
+    padding: 20px 12px;
+  }
+
+  .activation-pirate-card {
+    padding: 25px 20px;
+  }
+
+  .activation-pirate-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .activation-pirate-brand-name {
+    font-size: 23px;
+  }
+
+  .activation-pirate-brand-subtitle {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .activation-pirate-page *,
+  .activation-pirate-page *::before,
+  .activation-pirate-page *::after {
+    transition: none !important;
+  }
+}

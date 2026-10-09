@@ -1,79 +1,206 @@
-import React, { useState } from "react";
-import axios from "axios"; // Import axios
+import { useState } from "react";
+import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate, Link } from "react-router-dom";
+import {
+  Anchor,
+  Compass,
+  Eye,
+  EyeOff,
+  LockKeyhole,
+  Mail,
+  ShieldCheck,
+} from "lucide-react";
+import "./login-pirate.css";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
-  const API_URL = "http://localhost:3000/auth/login";
+  const API_URL =
+    import.meta.env.VITE_API_URL || "http://localhost:3000";
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      // Axios call
       const response = await axios.post(
-        API_URL,
-        { email, password }, // Data payload (no JSON.stringify needed)
+        `${API_URL}/auth/login`,
+        { email, password },
         {
           headers: { "Content-Type": "application/json" },
-          withCredentials: true, // IMPORTANT: Enables cookies for Passport.js session
+          withCredentials: true,
         }
       );
 
-      // If code reaches here, status is 2xx (Success)
       if (response.status === 200) {
-        toast.success("Login Successful!", { position: "top-center" });
+        toast.success("Login successful!", {
+          position: "top-center",
+        });
         navigate("/home");
       }
-
     } catch (err) {
-      // Axios throws error for 4xx/5xx responses
       console.error("Login Error:", err);
-      
-      const errorMessage = err.response?.data?.message || "Login failed";
-      toast.error(errorMessage, { position: "bottom-center" });
-      
+
+      const errorMessage =
+        err.response?.data?.message || "Login failed";
+
+      toast.error(errorMessage, {
+        position: "bottom-center",
+      });
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card shadow p-4" style={{ width: "100%", maxWidth: "420px" }}>
-        <h3 className="text-center mb-3" style={{ fontFamily: "Poppins, sans-serif", fontWeight: "700", color: "#06367aff" }}>
-          <img src="public/media/images/TILOGO.png" alt="" style={{ height: "35px", width: "35px", marginRight: "10px" }} />
-          Student Login
-        </h3>
-
-        <form onSubmit={handleLogin}>
-          <div className="mb-3">
-            <label className="form-label text-muted">Email Address</label>
-            <input type="email" className="form-control" placeholder="Enter your Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label text-muted">Password</label>
-            <input type="password" className="form-control" placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-          </div>
-
-          <button disabled={loading} className="btn btn-outline-primary w-100">
-            {loading ? "Logging in..." : "Login"}
-          </button>
-
-          <div className="text-center mt-3">
-            <p className="text-muted small mb-1">First time here?</p>
-            <Link to="/activate" style={{ textDecoration: "none", fontWeight: "600" }}>Activate Your Account</Link>
-          </div>
-        </form>
+    <main className="login-pirate-page">
+      <div className="login-pirate-decoration login-decoration-one">
+        ✦
       </div>
-    </div>
+      <div className="login-pirate-decoration login-decoration-two">
+        ✧
+      </div>
+
+      <section className="login-pirate-card">
+        <header className="login-pirate-header">
+          <div className="login-pirate-brand">
+            <span className="login-pirate-anchor">
+              <Anchor size={27} />
+            </span>
+            <div>
+              <h2>VEDORA</h2>
+              <p>INSTITUTE OF TECHNOLOGY</p>
+            </div>
+          </div>
+
+          <span className="login-pirate-emblem">
+            <Compass size={20} />
+          </span>
+        </header>
+
+        <div className="login-pirate-content">
+          <div className="login-pirate-logo">
+            <img
+              src="/media/images/TILOGO.png"
+              alt="Vedora Institute logo"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
+            <Anchor size={31} />
+          </div>
+
+          <p className="login-pirate-eyebrow">
+            YOUR ACADEMIC VOYAGE BEGINS HERE
+          </p>
+
+          <h1>Welcome Aboard</h1>
+
+          <p className="login-pirate-description">
+            Sign in to access your student portal and discover your
+            academic resources.
+          </p>
+
+          <form className="login-pirate-form" onSubmit={handleLogin}>
+            <div className="login-pirate-field">
+              <label htmlFor="login-email">Email Address</label>
+
+              <div className="login-pirate-input-wrap">
+                <Mail size={18} />
+                <input
+                  id="login-email"
+                  type="email"
+                  placeholder="Enter your email"
+                  autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="login-pirate-field">
+              <label htmlFor="login-password">Password</label>
+
+              <div className="login-pirate-input-wrap">
+                <LockKeyhole size={18} />
+                <input
+                  id="login-password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter your password"
+                  autoComplete="current-password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+
+                <button
+                  type="button"
+                  className="login-pirate-password-toggle"
+                  onClick={() => setShowPassword((previous) => !previous)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? (
+                    <EyeOff size={18} />
+                  ) : (
+                    <Eye size={18} />
+                  )}
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="login-pirate-submit"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span className="login-pirate-spinner" />
+                  Signing in...
+                </>
+              ) : (
+                <>
+                  <Anchor size={18} />
+                  Sign In to Your Portal
+                </>
+              )}
+            </button>
+          </form>
+
+          <div className="login-pirate-divider">
+            <span />
+            <Anchor size={15} />
+            <span />
+          </div>
+
+          <div className="login-pirate-activation">
+            <p>First time navigating with us?</p>
+            <Link to="/activate">Activate Your Account ↗</Link>
+          </div>
+
+          <div className="login-pirate-security">
+            <ShieldCheck size={16} />
+            Secure access to your academic portal
+          </div>
+        </div>
+
+        <footer className="login-pirate-footer">
+          <span>✦</span>
+          KNOWLEDGE IS YOUR TREASURE
+          <span>✦</span>
+        </footer>
+      </section>
+
+      <p className="login-pirate-copyright">
+        © Vedora Institute of Technology
+      </p>
+    </main>
   );
 };
 
