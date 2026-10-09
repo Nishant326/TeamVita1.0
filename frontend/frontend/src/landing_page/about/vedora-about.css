@@ -1,0 +1,546 @@
+.vedora-about {
+  --va-navy: #10263f;
+  --va-deep: #091725;
+  --va-gold: #c89b3c;
+  --va-parchment: #f4ebdd;
+  --va-ivory: #faf7f0;
+  --va-text: #354252;
+
+  color: var(--va-navy);
+  background: var(--va-ivory);
+  overflow: clip;
+}
+
+.vedora-about *,
+.vedora-about *::before,
+.vedora-about *::after {
+  box-sizing: border-box;
+}
+
+.vedora-about a {
+  text-decoration: none;
+}
+
+.vedora-about-hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  isolation: isolate;
+  padding: 90px 24px 105px;
+  color: white;
+  background-color: var(--va-deep);
+  background-image: url("https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1920&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center 55%;
+  text-align: center;
+}
+
+.vedora-about-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    120deg,
+    rgba(9, 23, 37, 0.94),
+    rgba(16, 38, 63, 0.79),
+    rgba(9, 23, 37, 0.65)
+  );
+}
+
+.vedora-about-content {
+  max-width: 900px;
+  animation: vedora-arrive 0.7s ease-out both;
+}
+
+.vedora-eyebrow {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--va-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.vedora-about-content h1 {
+  margin: 25px 0 20px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  line-height: 1.13;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.vedora-about-content h1 span,
+.vedora-story-copy h2 span {
+  display: block;
+  color: var(--va-gold);
+}
+
+.vedora-about-content > p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #e1e8ed;
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.vedora-gold-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 13px 22px;
+  color: var(--va-deep);
+  background: var(--va-gold);
+  border: 1px solid var(--va-gold);
+  border-radius: 7px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.vedora-about-content .vedora-gold-button {
+  margin-top: 30px;
+}
+
+.vedora-gold-button:hover {
+  color: var(--va-deep);
+  background: #e3bb68;
+  transform: translateY(-2px);
+}
+
+.vedora-hero-compass {
+  position: absolute;
+  right: 7%;
+  bottom: 12%;
+  color: rgba(200, 155, 60, 0.4);
+  font-size: 5rem;
+  pointer-events: none;
+}
+
+.vedora-hero-caption {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  width: 100%;
+  color: #d7c69f;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-align: center;
+}
+
+/* Story */
+
+.vedora-story {
+  padding: 100px 24px;
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(200, 155, 60, 0.09),
+      transparent 35%
+    ),
+    var(--va-ivory);
+}
+
+.vedora-story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 75px;
+  width: min(100%, 1160px);
+  margin: 0 auto;
+}
+
+.vedora-story-visual {
+  position: relative;
+  min-width: 0;
+}
+
+.vedora-story-image {
+  position: relative;
+  height: 440px;
+  overflow: hidden;
+  background: var(--va-navy);
+  border: 7px solid white;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(16, 38, 63, 0.13);
+}
+
+.vedora-story-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.vedora-image-label {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(transparent, rgba(9, 23, 37, 0.95));
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.vedora-compass-stamp {
+  position: absolute;
+  right: -22px;
+  bottom: -25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  width: 110px;
+  height: 110px;
+  justify-content: center;
+  color: var(--va-deep);
+  background: var(--va-gold);
+  border: 5px solid var(--va-ivory);
+  border-radius: 50%;
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.vedora-section-kicker {
+  display: inline-block;
+  color: #8a651d;
+  font-size: 0.73rem;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+}
+
+.vedora-story-copy h2 {
+  margin: 18px 0 22px;
+  color: var(--va-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.vedora-story-copy h2 span {
+  margin-top: 5px;
+  color: #987024;
+}
+
+.vedora-story-copy > p {
+  margin: 0 0 17px;
+  color: var(--va-text);
+  font-size: 0.97rem;
+  line-height: 1.9;
+}
+
+.vedora-story-note {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  margin-top: 27px;
+  padding: 20px;
+  color: var(--va-gold);
+  background: var(--va-parchment);
+  border-left: 3px solid var(--va-gold);
+  border-radius: 3px;
+}
+
+.vedora-story-note > div {
+  flex: 1;
+}
+
+.vedora-story-note strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--va-navy);
+}
+
+.vedora-story-note p {
+  margin: 0;
+  color: var(--va-text);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* Engineering branches */
+
+.vedora-disciplines {
+  padding: 90px 24px 100px;
+  background: var(--va-parchment);
+}
+
+.vedora-disciplines-inner {
+  width: min(100%, 1160px);
+  margin: 0 auto;
+}
+
+.vedora-section-heading {
+  max-width: 700px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.vedora-section-heading h2 {
+  margin: 15px 0;
+  color: var(--va-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.vedora-section-heading > p {
+  margin: 0;
+  color: #5b6670;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.vedora-branch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.vedora-branch-card {
+  position: relative;
+  min-width: 0;
+  min-height: 270px;
+  padding: 24px;
+  overflow: hidden;
+  background: var(--va-ivory);
+  border: 1px solid rgba(16, 38, 63, 0.12);
+  border-radius: 9px;
+  box-shadow: 0 8px 22px rgba(16, 38, 63, 0.045);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vedora-branch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(16, 38, 63, 0.1);
+}
+
+.vedora-branch-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: #8a651d;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.vedora-branch-icon {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  margin: 22px 0 18px;
+  color: var(--va-gold);
+  background: var(--va-navy);
+  border-radius: 9px;
+}
+
+.vedora-branch-card h3 {
+  margin: 0 0 12px;
+  color: var(--va-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.18rem;
+  line-height: 1.4;
+}
+
+.vedora-branch-card > p {
+  margin: 0;
+  color: #5b6670;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.vedora-branch-code {
+  position: absolute;
+  right: 15px;
+  bottom: 7px;
+  color: rgba(16, 38, 63, 0.055);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4rem;
+  font-weight: 900;
+  pointer-events: none;
+}
+
+/* Closing banner */
+
+.vedora-closing {
+  padding: 60px 24px;
+  color: white;
+  background: var(--va-navy);
+  border-top: 3px solid var(--va-gold);
+}
+
+.vedora-closing-inner {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: min(100%, 1160px);
+  margin: 0 auto;
+}
+
+.vedora-closing-inner > svg {
+  flex-shrink: 0;
+  color: var(--va-gold);
+}
+
+.vedora-closing-inner > div {
+  flex: 1;
+}
+
+.vedora-closing .vedora-section-kicker {
+  color: var(--va-gold);
+}
+
+.vedora-closing h2 {
+  margin: 10px 0;
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.3;
+}
+
+.vedora-closing p {
+  margin: 0;
+  color: #d0dae2;
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+.vedora-closing .vedora-gold-button {
+  flex-shrink: 0;
+}
+
+/* Animations and responsive layouts */
+
+@keyframes vedora-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .vedora-story-inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .vedora-story-visual {
+    width: min(100%, 600px);
+    margin: 0 auto;
+  }
+
+  .vedora-branch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vedora-closing-inner {
+    flex-wrap: wrap;
+  }
+
+  .vedora-closing-inner .vedora-gold-button {
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .vedora-about-hero {
+    min-height: 540px;
+    padding: 70px 22px 85px;
+  }
+
+  .vedora-about-content h1 {
+    font-size: clamp(2.25rem, 10vw, 3.2rem);
+  }
+
+  .vedora-about-content > p {
+    font-size: 0.98rem;
+  }
+
+  .vedora-hero-compass {
+    right: 15px;
+    bottom: 45px;
+    font-size: 3rem;
+  }
+
+  .vedora-hero-caption {
+    font-size: 0.57rem;
+    letter-spacing: 0.08em;
+  }
+
+  .vedora-story {
+    padding: 65px 20px;
+  }
+
+  .vedora-story-image {
+    height: 320px;
+  }
+
+  .vedora-compass-stamp {
+    right: -7px;
+    width: 88px;
+    height: 88px;
+  }
+
+  .vedora-disciplines {
+    padding: 65px 20px;
+  }
+
+  .vedora-branch-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .vedora-branch-card {
+    min-height: 250px;
+  }
+
+  .vedora-closing {
+    padding: 45px 22px;
+  }
+
+  .vedora-closing-inner {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .vedora-closing-inner > div {
+    flex-basis: calc(100% - 60px);
+  }
+
+  .vedora-closing-inner .vedora-gold-button {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vedora-about *,
+  .vedora-about *::before,
+  .vedora-about *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

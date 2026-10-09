@@ -1,0 +1,505 @@
+/* ======================================
+   VEDORA — MESSAGES IN BOTTLES
+====================================== */
+
+.bottle-notices {
+  --bottle-navy: #10263f;
+  --bottle-deep: #091725;
+  --bottle-gold: #c89b3c;
+  --bottle-parchment: #f4ebdd;
+  --bottle-ivory: #faf7f0;
+  --bottle-text: #354252;
+
+  color: var(--bottle-navy);
+  background: var(--bottle-ivory);
+  min-height: 70vh;
+  overflow: clip;
+}
+
+.bottle-notices *,
+.bottle-notices *::before,
+.bottle-notices *::after {
+  box-sizing: border-box;
+}
+
+.bottle-notices a {
+  text-decoration: none;
+}
+
+/* Hero */
+
+.bottle-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 390px;
+  padding: 70px 24px;
+  isolation: isolate;
+  color: white;
+  text-align: center;
+  background-color: var(--bottle-deep);
+  background-image: url("https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1920&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center 55%;
+}
+
+.bottle-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      110deg,
+      rgba(9, 23, 37, 0.94),
+      rgba(16, 38, 63, 0.78)
+    );
+}
+
+.bottle-hero-content {
+  max-width: 790px;
+  animation: bottle-arrive 0.65s ease-out both;
+}
+
+.bottle-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  color: var(--bottle-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.bottle-hero-content h1 {
+  margin: 22px 0 18px;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.bottle-hero-content > p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #e0e7ed;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.bottle-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 27px;
+  padding: 13px 21px;
+  color: var(--bottle-deep);
+  background: var(--bottle-gold);
+  border: 1px solid var(--bottle-gold);
+  border-radius: 7px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.bottle-hero-button:hover {
+  color: var(--bottle-deep);
+  background: #e2b95f;
+  transform: translateY(-2px);
+}
+
+/* Main listing section */
+
+.bottle-list-section {
+  padding: 75px 24px 95px;
+  background:
+    radial-gradient(
+      ellipse at 50% 0,
+      rgba(200, 155, 60, 0.1),
+      transparent 55%
+    ),
+    var(--bottle-ivory);
+  scroll-margin-top: 20px;
+}
+
+.bottle-container {
+  width: min(100%, 1160px);
+  margin: 0 auto;
+}
+
+.bottle-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 34px;
+}
+
+.bottle-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 13px;
+  color: #8b671f;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+}
+
+.bottle-section-heading h2 {
+  margin: 0 0 12px;
+  color: var(--bottle-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+}
+
+.bottle-section-heading p {
+  max-width: 660px;
+  margin: 0;
+  color: #606b76;
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+.bottle-count {
+  flex-shrink: 0;
+  padding: 9px 13px;
+  color: #78571d;
+  background: var(--bottle-parchment);
+  border: 1px solid rgba(200, 155, 60, 0.35);
+  border-radius: 30px;
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+/* Notice grid */
+
+.bottle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.bottle-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 290px;
+  padding: 23px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--bottle-parchment);
+  border: 1px solid rgba(155, 117, 50, 0.26);
+  border-radius: 10px;
+  box-shadow: 0 7px 22px rgba(16, 38, 63, 0.055);
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.bottle-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--bottle-gold);
+  box-shadow: 0 16px 35px rgba(16, 38, 63, 0.12);
+}
+
+.bottle-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.bottle-icon {
+  display: grid;
+  place-items: center;
+  width: 51px;
+  height: 51px;
+  flex-shrink: 0;
+  color: var(--bottle-gold);
+  background: var(--bottle-navy);
+  border: 1px solid rgba(200, 155, 60, 0.65);
+  border-radius: 10px;
+}
+
+.bottle-category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 65%;
+  padding: 7px 10px;
+  color: #78571d;
+  background: rgba(200, 155, 60, 0.12);
+  border: 1px solid rgba(200, 155, 60, 0.3);
+  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.bottle-category-examination {
+  color: #8c3730;
+  background: #f6e5df;
+  border-color: #e8c6be;
+}
+
+.bottle-category-holiday {
+  color: #236046;
+  background: #e1eee3;
+  border-color: #c4dcc8;
+}
+
+.bottle-category-results {
+  color: #4c468b;
+  background: #e9e6f6;
+  border-color: #d2cdef;
+}
+
+.bottle-card-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.bottle-card-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #8b671f;
+  font-size: 0.64rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.bottle-card-content h3 {
+  margin: 0 0 16px;
+  color: var(--bottle-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.22rem;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.bottle-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 22px;
+  color: #65717b;
+  font-size: 0.83rem;
+}
+
+.bottle-card-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.bottle-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1 1 100px;
+  min-height: 43px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 0.84rem;
+  font-weight: 750;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.bottle-action-outline {
+  color: var(--bottle-navy);
+  background: transparent;
+  border-color: rgba(16, 38, 63, 0.3);
+}
+
+.bottle-action-outline:hover {
+  color: white;
+  background: var(--bottle-navy);
+  border-color: var(--bottle-navy);
+}
+
+.bottle-action-primary {
+  color: var(--bottle-deep);
+  background: var(--bottle-gold);
+  border-color: var(--bottle-gold);
+}
+
+.bottle-action-primary:hover {
+  color: var(--bottle-deep);
+  background: #e1b65c;
+  border-color: #e1b65c;
+}
+
+.bottle-missing-pdf {
+  margin: 0;
+  color: #78571d;
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+.bottle-card-decoration {
+  position: absolute;
+  right: -30px;
+  bottom: -45px;
+  z-index: -1;
+  width: 125px;
+  height: 125px;
+  border: 1px solid rgba(155, 117, 50, 0.13);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 12px rgba(155, 117, 50, 0.035),
+    0 0 0 24px rgba(155, 117, 50, 0.025);
+  pointer-events: none;
+}
+
+/* Loading, empty and error states */
+
+.bottle-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  padding: 35px 20px;
+  color: var(--bottle-navy);
+  background: var(--bottle-parchment);
+  border: 1px solid rgba(155, 117, 50, 0.25);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.bottle-state > svg {
+  margin-bottom: 17px;
+  color: #9b762b;
+}
+
+.bottle-state h3 {
+  margin: 0 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+}
+
+.bottle-state p {
+  max-width: 500px;
+  margin: 0;
+  color: #606b76;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.bottle-spinner {
+  animation: bottle-spin 1s linear infinite;
+}
+
+.bottle-retry-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  color: var(--bottle-deep);
+  background: var(--bottle-gold);
+  border: 1px solid var(--bottle-gold);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.bottle-retry-button:hover {
+  background: #e1b65c;
+}
+
+/* Motion */
+
+@keyframes bottle-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bottle-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 991px) {
+  .bottle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .bottle-hero {
+    min-height: 350px;
+    padding: 55px 20px;
+  }
+
+  .bottle-hero-content h1 {
+    font-size: clamp(2.15rem, 10vw, 3.1rem);
+  }
+
+  .bottle-hero-content > p {
+    font-size: 0.95rem;
+  }
+
+  .bottle-list-section {
+    padding: 55px 18px 65px;
+  }
+
+  .bottle-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .bottle-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+  }
+
+  .bottle-card {
+    min-height: 270px;
+    padding: 21px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bottle-notices *,
+  .bottle-notices *::before,
+  .bottle-notices *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

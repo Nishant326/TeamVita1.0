@@ -1,0 +1,351 @@
+.pirate-resources-page {
+  min-height: 75vh;
+  padding: 55px 20px 75px;
+  color: #f8f5ef;
+  background:
+    radial-gradient(ellipse at 50% 0%, #23405a 0%, transparent 55%),
+    #091725;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.pirate-resources-shell {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+}
+
+.pirate-resources-heading {
+  margin-bottom: 38px;
+  text-align: center;
+}
+
+.pirate-resources-emblem {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 17px;
+  place-items: center;
+  border: 1px solid #c89b3c80;
+  border-radius: 17px;
+  background: #c89b3c12;
+  color: #d6ae5d;
+}
+
+.pirate-resources-eyebrow {
+  margin: 0 0 10px;
+  color: #c89b3c;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+}
+
+.pirate-resources-heading h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  font-weight: 800;
+}
+
+.pirate-resources-heading h1 span {
+  color: #d6ae5d;
+}
+
+.pirate-resources-heading > p:last-child {
+  margin-top: 13px;
+  color: #c3ced8;
+}
+
+.pirate-resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.pirate-document-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 23px;
+  border: 1px solid #c89b3c40;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #152d44, #0e2032);
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.pirate-document-card:hover {
+  transform: translateY(-4px);
+  border-color: #c89b3c;
+}
+
+.pirate-document-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 23px;
+}
+
+.pirate-document-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 13px;
+  background: #c89b3c18;
+  color: #e6c577;
+}
+
+.pirate-document-unit {
+  padding: 6px 10px;
+  border: 1px solid #c89b3c50;
+  border-radius: 999px;
+  color: #e6c577;
+  font-size: 0.75rem;
+}
+
+.pirate-document-subject {
+  margin: 0 0 8px;
+  color: #d6ae5d;
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.pirate-document-card h2 {
+  margin: 0 0 12px;
+  color: #fff9ed;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.pirate-document-author {
+  margin: 0 0 18px;
+  color: #bdc9d4;
+  font-size: 0.82rem;
+}
+
+.pirate-document-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.pirate-document-primary,
+.pirate-document-secondary {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9px;
+  font-size: 0.85rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.pirate-document-primary {
+  flex: 1;
+  padding: 0 12px;
+  border: 1px solid #c89b3c;
+  background: #c89b3c;
+  color: #10263f;
+}
+
+.pirate-document-primary:hover {
+  background: #e6c577;
+  border-color: #e6c577;
+  color: #10263f;
+}
+
+.pirate-document-secondary {
+  width: 42px;
+  flex-shrink: 0;
+  border: 1px solid #c89b3c80;
+  color: #e6c577;
+}
+
+.pirate-document-secondary:hover {
+  background: #c89b3c18;
+}
+
+.pirate-document-unavailable {
+  color: #ffc3a8;
+  font-size: 0.82rem;
+}
+
+.pirate-resource-state {
+  display: flex;
+  min-height: 230px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px;
+  border: 1px solid #c89b3c40;
+  border-radius: 17px;
+  background: #10263f;
+  color: #c3ced8;
+  text-align: center;
+}
+
+.pirate-resource-state h2 {
+  margin: 0;
+  color: #fff9ed;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.pirate-resource-state p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.pirate-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #c89b3c35;
+  border-top-color: #d6ae5d;
+  border-radius: 50%;
+  animation: pirate-spin 0.8s linear infinite;
+}
+
+.pirate-retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid #c89b3c;
+  border-radius: 9px;
+  background: transparent;
+  color: #e6c577;
+  cursor: pointer;
+}
+
+.pirate-pyq-list {
+  overflow: hidden;
+  border: 1px solid #c89b3c45;
+  border-radius: 17px;
+  background: #10263f;
+}
+
+.pirate-pyq-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 21px;
+  border-bottom: 1px solid #ffffff12;
+  transition: background 0.2s;
+}
+
+.pirate-pyq-row:last-child {
+  border-bottom: 0;
+}
+
+.pirate-pyq-row:hover {
+  background: #ffffff06;
+}
+
+.pirate-pyq-year {
+  display: flex;
+  width: 76px;
+  min-height: 76px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #c89b3c45;
+  border-radius: 12px;
+  background: #c89b3c12;
+  color: #e6c577;
+}
+
+.pirate-pyq-year span {
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.pirate-pyq-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pirate-pyq-info h2 {
+  margin: 0 0 7px;
+  color: #fff9ed;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.12rem;
+  overflow-wrap: anywhere;
+}
+
+.pirate-pyq-info p {
+  margin: 0;
+  color: #bdc9d4;
+  font-size: 0.86rem;
+  overflow-wrap: anywhere;
+}
+
+.pirate-pyq-action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+}
+
+@keyframes pirate-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 850px) {
+  .pirate-resource-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .pirate-resources-page {
+    padding: 38px 14px 55px;
+  }
+
+  .pirate-resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pirate-pyq-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 13px;
+    padding: 16px;
+  }
+
+  .pirate-pyq-year {
+    width: 64px;
+    min-height: 64px;
+  }
+
+  .pirate-pyq-info {
+    flex-basis: calc(100% - 85px);
+    padding-top: 5px;
+  }
+
+  .pirate-pyq-action {
+    width: 100%;
+    padding-left: 77px;
+  }
+
+  .pirate-document-card {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pirate-resources-page *,
+  .pirate-resources-page *::before,
+  .pirate-resources-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

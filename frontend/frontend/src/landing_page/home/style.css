@@ -1,0 +1,159 @@
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  aspect-ratio: 3 / 2; /* keeps nice proportions (600x400) */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* angled white shape on the left */
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25%; /* width of the white shape */
+  height: 100%;
+  background: white;
+  clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
+  z-index: 2;
+}
+
+/* image styling */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.box {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border: 1px solid rgb(223, 218, 218);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  transition: all 0.3s ease; /* smooth transition */
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: #f4f4f4; /* blue background on hover */
+  transform: translateY(-5px) scale(1.02); /* lift up and slightly bigger */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* subtle shadow */
+}
+
+.syllabus-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #003366;
+}
+
+.box i {
+  color: #007bff;
+}
+
+.box h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.box button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+select {
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  select {
+    width: 300px;
+  }
+  select.form-select {
+    font-size: 14px;
+    padding: 8px;
+    width: 150px;
+  }
+}
+
+.syllabus-card {
+  height: 250px;
+  width: 350px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.syllabus-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.syllabus-card i {
+  background: #eef3ff;
+  color: #4f46e5;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 30px;
+}
+
+.syllabus-card h4 {
+  font-size:large;
+  padding: 5px;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.syllabus-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0 20px;
+}
+
+.apply-btn {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.apply-btn:hover {
+  background: #312e81;
+}
+
+.syllabus-tag {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: #eef3ff;
+  color: #4f46e5;
+  font-size: 13px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}

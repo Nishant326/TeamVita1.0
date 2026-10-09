@@ -1,0 +1,676 @@
+/* =========================================
+   PIRATE POLYTECHNIC - SHARED DESIGN SYSTEM
+========================================= */
+
+.pirate-home {
+  --pirate-navy: #10263f;
+  --pirate-deep: #091725;
+  --pirate-gold: #c89b3c;
+  --pirate-parchment: #f4ebdd;
+  --pirate-ivory: #f8f5ef;
+  --pirate-green: #1c5948;
+  --pirate-red: #a83a32;
+
+  color: var(--pirate-navy);
+  background: var(--pirate-ivory);
+  overflow: clip;
+}
+
+.pirate-home *,
+.pirate-home *::before,
+.pirate-home *::after {
+  box-sizing: border-box;
+}
+
+.pirate-home a {
+  text-decoration: none;
+}
+
+.pirate-home button,
+.pirate-home a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pirate-home :focus-visible {
+  outline: 3px solid var(--pirate-gold);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   HERO / SWIPER
+========================================= */
+
+.pirate-hero {
+  background: var(--pirate-deep);
+  position: relative;
+}
+
+.pirate-swiper {
+  width: 100%;
+  height: min(76vh, 760px);
+  min-height: 500px;
+}
+
+.pirate-hero-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 70px 24px;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.pirate-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(9, 23, 37, 0.92) 0%,
+      rgba(9, 23, 37, 0.69) 55%,
+      rgba(9, 23, 37, 0.4) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(9, 23, 37, 0.35),
+      transparent 60%
+    );
+}
+
+.pirate-hero-content {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: pirate-arrival 0.7s ease-out both;
+}
+
+.pirate-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pirate-gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.pirate-hero-content h1 {
+  margin: 24px 0 20px;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.6rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  text-shadow: 0 5px 24px rgba(0, 0, 0, 0.4);
+}
+
+.pirate-hero-content > p {
+  max-width: 740px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.8;
+  text-wrap: balance;
+}
+
+.pirate-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.pirate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 13px 23px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pirate-btn:hover {
+  transform: translateY(-2px);
+}
+
+.pirate-btn-gold {
+  color: var(--pirate-deep);
+  background: var(--pirate-gold);
+  border-color: var(--pirate-gold);
+}
+
+.pirate-btn-gold:hover {
+  color: var(--pirate-deep);
+  background: #e0b85f;
+  border-color: #e0b85f;
+}
+
+.pirate-btn-outline {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.pirate-btn-outline:hover {
+  color: var(--pirate-deep);
+  background: #fff;
+}
+
+.pirate-hero-decoration {
+  position: absolute;
+  right: 7%;
+  bottom: 10%;
+  color: rgba(200, 155, 60, 0.25);
+  font-size: clamp(3rem, 8vw, 7rem);
+  pointer-events: none;
+  transform: rotate(-12deg);
+}
+
+/* Swiper controls */
+
+.pirate-swiper .swiper-button-next,
+.pirate-swiper .swiper-button-prev {
+  color: var(--pirate-gold);
+  transition: transform 0.2s ease;
+}
+
+.pirate-swiper .swiper-button-next:hover {
+  transform: translateX(3px);
+}
+
+.pirate-swiper .swiper-button-prev:hover {
+  transform: translateX(-3px);
+}
+
+.pirate-swiper .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  opacity: 0.65;
+}
+
+.pirate-swiper .swiper-pagination-bullet-active {
+  width: 25px;
+  border-radius: 10px;
+  background: var(--pirate-gold);
+  opacity: 1;
+}
+
+/* =========================================
+   CAPTAIN'S CURSE
+========================================= */
+
+.captains-curse {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px clamp(20px, 5vw, 75px);
+  color: var(--pirate-parchment);
+  background: var(--pirate-navy);
+  border-top: 1px solid rgba(200, 155, 60, 0.35);
+}
+
+.curse-copy {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.curse-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  border-radius: 14px;
+  background: rgba(200, 155, 60, 0.13);
+  font-size: 1.7rem;
+}
+
+.curse-copy h2 {
+  margin: 0 0 5px;
+  color: var(--pirate-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+}
+
+.curse-copy p {
+  max-width: 460px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.curse-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.curse-meter {
+  padding: 8px 12px;
+  border: 1px solid rgba(200, 155, 60, 0.5);
+  border-radius: 7px;
+  color: var(--pirate-gold);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.curse-button,
+.curse-reset {
+  min-height: 40px;
+  padding: 10px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.curse-button {
+  color: var(--pirate-deep);
+  background: var(--pirate-gold);
+  border: 1px solid var(--pirate-gold);
+}
+
+.curse-reset {
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.curse-button:hover,
+.curse-reset:hover {
+  transform: translateY(-2px);
+}
+
+.curse-level-1 .pirate-hero-slide {
+  background-position: center 48%;
+}
+
+.curse-level-2 .pirate-hero-slide {
+  background-position: center 52%;
+}
+
+.curse-level-3 .pirate-hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(37, 20, 34, 0.94),
+      rgba(9, 23, 37, 0.6)
+    ),
+    linear-gradient(
+      0deg,
+      rgba(168, 58, 50, 0.24),
+      transparent
+    );
+}
+
+.curse-level-3 .pirate-hero-decoration {
+  color: rgba(200, 155, 60, 0.7);
+  animation: pirate-rock 1.2s ease-in-out infinite alternate;
+}
+
+/* =========================================
+   KNOWLEDGE ISLANDS
+========================================= */
+
+.knowledge-islands {
+  position: relative;
+  padding: 90px 24px 65px;
+  color: var(--pirate-navy);
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(200, 155, 60, 0.11),
+      transparent 50%
+    ),
+    var(--pirate-ivory);
+  scroll-margin-top: 25px;
+}
+
+.pirate-section-container {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.islands-heading {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.islands-heading .pirate-eyebrow {
+  margin-bottom: 15px;
+  color: #8d671c;
+}
+
+.islands-heading h2 {
+  margin: 0 0 17px;
+  color: var(--pirate-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.islands-heading > p {
+  max-width: 660px;
+  margin: 0 auto;
+  color: #5d6873;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.pirate-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 25px;
+  color: #a77a27;
+}
+
+.pirate-divider::before,
+.pirate-divider::after {
+  width: 65px;
+  height: 1px;
+  background: rgba(167, 122, 39, 0.45);
+  content: "";
+}
+
+.island-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.island-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 315px;
+  padding: 25px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--pirate-parchment);
+  border: 1px solid rgba(155, 117, 50, 0.28);
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(16, 38, 63, 0.06);
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.island-card:hover {
+  border-color: var(--pirate-gold);
+  box-shadow: 0 16px 35px rgba(16, 38, 63, 0.12);
+}
+
+.island-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+.island-number {
+  color: #826225;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.island-compass {
+  color: #b38b3e;
+  font-size: 1.3rem;
+}
+
+.island-icon {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  margin: 23px 0 18px;
+  color: var(--pirate-gold);
+  background: var(--pirate-navy);
+  border: 1px solid rgba(200, 155, 60, 0.65);
+  border-radius: 12px;
+}
+
+.island-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 12px;
+  color: var(--pirate-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.island-card > p {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 24px;
+  color: #59636d;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.island-link {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding: 10px 0 3px;
+  color: #795619;
+  border-bottom: 1px solid rgba(121, 86, 25, 0.4);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.island-link:hover {
+  color: var(--pirate-green);
+  border-color: var(--pirate-green);
+}
+
+.island-card-decoration {
+  position: absolute;
+  right: -25px;
+  bottom: -42px;
+  z-index: -1;
+  width: 125px;
+  height: 125px;
+  border: 1px solid rgba(167, 122, 39, 0.13);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 12px rgba(167, 122, 39, 0.035),
+    0 0 0 24px rgba(167, 122, 39, 0.025);
+  pointer-events: none;
+}
+
+.islands-footer {
+  margin: 38px 0 0;
+  color: #6e6048;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes pirate-arrival {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pirate-rock {
+  from {
+    transform: rotate(-12deg) translateY(0);
+  }
+
+  to {
+    transform: rotate(-7deg) translateY(-7px);
+  }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 991px) {
+  .pirate-swiper {
+    height: 650px;
+    min-height: 500px;
+  }
+
+  .island-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .captains-curse {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .pirate-swiper {
+    height: 590px;
+    min-height: 490px;
+  }
+
+  .pirate-hero-slide {
+    padding: 50px 23px;
+  }
+
+  .pirate-hero-content h1 {
+    margin: 20px 0 16px;
+    font-size: clamp(2.3rem, 11vw, 3.5rem);
+  }
+
+  .pirate-hero-content > p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .pirate-hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 26px;
+  }
+
+  .pirate-btn {
+    width: min(100%, 310px);
+  }
+
+  .pirate-swiper .swiper-button-next,
+  .pirate-swiper .swiper-button-prev {
+    --swiper-navigation-size: 25px;
+  }
+
+  .pirate-hero-decoration {
+    right: 4%;
+    bottom: 5%;
+    font-size: 3rem;
+  }
+
+  .captains-curse {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 22px;
+  }
+
+  .curse-copy {
+    align-items: flex-start;
+  }
+
+  .curse-actions {
+    align-items: stretch;
+  }
+
+  .curse-meter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .curse-button,
+  .curse-reset {
+    flex: 1 1 auto;
+  }
+
+  .knowledge-islands {
+    padding: 65px 18px 45px;
+  }
+
+  .islands-heading {
+    margin-bottom: 32px;
+  }
+
+  .island-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+  }
+
+  .island-card {
+    min-height: 285px;
+    padding: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pirate-home *,
+  .pirate-home *::before,
+  .pirate-home *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

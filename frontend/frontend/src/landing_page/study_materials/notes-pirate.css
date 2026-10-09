@@ -1,0 +1,344 @@
+.pirate-notes-page {
+  min-height: 75vh;
+  padding: 64px 20px 80px;
+  color: #f8f5ef;
+  background:
+    radial-gradient(ellipse at 50% 0%, #23405a 0%, transparent 55%),
+    #091725;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.pirate-notes-shell {
+  width: min(100%, 1050px);
+  margin: 0 auto;
+}
+
+.notes-heading {
+  max-width: 720px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.notes-heading-icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 18px;
+  place-items: center;
+  color: #c89b3c;
+  border: 1px solid #c89b3c80;
+  border-radius: 18px;
+  background: #c89b3c12;
+}
+
+.notes-eyebrow {
+  margin: 0 0 10px;
+  color: #c89b3c;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.notes-heading h1 {
+  margin: 0;
+  color: #f8f5ef;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.notes-heading h1 span {
+  color: #d6ae5d;
+}
+
+.notes-subtitle {
+  max-width: 620px;
+  margin: 16px auto 0;
+  color: #c3ced8;
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.notes-selection-card {
+  width: min(100%, 490px);
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #c89b3c50;
+  border-radius: 20px;
+  background: #f4ebdd;
+  box-shadow: 0 22px 65px #00000035;
+  color: #10263f;
+  animation: notes-enter 0.4s ease both;
+}
+
+.notes-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  color: #a77b25;
+}
+
+.notes-card-top h2 {
+  margin: 0 0 6px;
+  color: #10263f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+}
+
+.notes-card-top p {
+  margin: 0;
+  color: #687586;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.notes-field {
+  margin-bottom: 21px;
+}
+
+.notes-field label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+  color: #263d53;
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.notes-field select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 13px;
+  border: 1px solid #d5c7b2;
+  border-radius: 10px;
+  outline: none;
+  background: #fffdf8;
+  color: #10263f;
+  font: inherit;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.notes-field select:focus {
+  border-color: #b58a34;
+  box-shadow: 0 0 0 3px #c89b3c30;
+}
+
+.notes-error {
+  margin: 0 0 16px;
+  color: #a52828;
+  font-size: 0.87rem;
+}
+
+.notes-submit-btn {
+  display: flex;
+  width: 100%;
+  min-height: 49px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 10px;
+  background: #10263f;
+  color: #f8f5ef;
+  font-size: 0.95rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.notes-submit-btn:hover {
+  transform: translateY(-2px);
+  background: #1c5948;
+}
+
+.notes-card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+  color: #7a715f;
+  font-size: 0.78rem;
+}
+
+.notes-results {
+  animation: notes-enter 0.4s ease both;
+}
+
+.notes-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #c89b3c55;
+}
+
+.notes-results-header h2 {
+  margin: 0;
+  color: #f8f5ef;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+}
+
+.notes-selected-detail {
+  margin: 9px 0 0;
+  color: #bdc9d4;
+  font-size: 0.9rem;
+}
+
+.notes-change-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid #c89b3c80;
+  border-radius: 999px;
+  background: transparent;
+  color: #e6c577;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notes-change-btn:hover {
+  background: #c89b3c18;
+}
+
+.notes-resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.notes-resource-card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid #c89b3c45;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #152d44, #0e2032);
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.notes-resource-card:hover {
+  transform: translateY(-5px);
+  border-color: #c89b3c;
+  box-shadow: 0 15px 35px #00000025;
+}
+
+.notes-resource-icon {
+  display: grid;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 22px;
+  place-items: center;
+  border-radius: 15px;
+}
+
+.notes-icon-blue {
+  background: #244b68;
+  color: #e4c16d;
+}
+
+.notes-icon-red {
+  background: #56313a;
+  color: #ffc3a8;
+}
+
+.notes-resource-tag {
+  margin: 0 0 9px;
+  color: #d2ad5e;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.notes-resource-card h3 {
+  margin: 0 0 11px;
+  color: #fff9ed;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+}
+
+.notes-resource-card > p:not(.notes-resource-tag) {
+  min-height: 52px;
+  margin: 0 0 24px;
+  color: #c3ced8;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.notes-resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #e6c577;
+  font-size: 0.92rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.notes-resource-link:hover {
+  color: #fff0c7;
+}
+
+.notes-resource-link svg {
+  transition: transform 0.2s;
+}
+
+.notes-resource-link:hover svg {
+  transform: translateX(4px);
+}
+
+@keyframes notes-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 650px) {
+  .pirate-notes-page {
+    padding: 42px 15px 55px;
+  }
+
+  .notes-selection-card {
+    padding: 22px 18px;
+  }
+
+  .notes-resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-results-header {
+    align-items: flex-start;
+  }
+
+  .notes-change-btn {
+    flex-shrink: 0;
+    padding: 9px 11px;
+  }
+
+  .notes-resource-card {
+    padding: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pirate-notes-page *,
+  .pirate-notes-page *::before,
+  .pirate-notes-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

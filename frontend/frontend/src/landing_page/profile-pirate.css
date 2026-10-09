@@ -1,0 +1,349 @@
+
+.pirate-profile-page {
+  min-height: 75vh;
+  padding: 55px 20px 70px;
+  color: #f8f5ef;
+  background:
+    radial-gradient(ellipse at 50% 0%, #29445b 0%, transparent 52%),
+    #091725;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.pirate-profile-shell {
+  width: min(100%, 780px);
+  margin: 0 auto;
+}
+
+.pirate-profile-heading {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.pirate-profile-emblem {
+  display: grid;
+  width: 57px;
+  height: 57px;
+  margin: 0 auto 16px;
+  place-items: center;
+  border: 1px solid #c89b3c80;
+  border-radius: 17px;
+  background: #c89b3c12;
+  color: #e6c577;
+}
+
+.pirate-profile-eyebrow {
+  margin: 0 0 10px;
+  color: #d6ae5d;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 2.3px;
+}
+
+.pirate-profile-heading h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+}
+
+.pirate-profile-heading h1 span {
+  color: #d6ae5d;
+}
+
+.pirate-profile-heading > p:last-child {
+  margin-top: 13px;
+  color: #bdc9d4;
+  line-height: 1.7;
+}
+
+.pirate-profile-card {
+  overflow: hidden;
+  border: 1px solid #c89b3c50;
+  border-radius: 20px;
+  background: #f4ebdd;
+  color: #10263f;
+  box-shadow: 0 22px 65px #00000035;
+}
+
+.pirate-profile-banner {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 34px;
+  background:
+    radial-gradient(ellipse at 90% 0%, #ffffff12, transparent 50%),
+    #10263f;
+  color: #f8f5ef;
+}
+
+.pirate-profile-avatar {
+  display: grid;
+  width: 92px;
+  height: 92px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 2px solid #d6ae5d;
+  border-radius: 50%;
+  background: #f4ebdd;
+  color: #10263f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  box-shadow: 0 0 0 6px #c89b3c20;
+}
+
+.pirate-profile-identity {
+  min-width: 0;
+}
+
+.pirate-profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border: 1px solid #c89b3c60;
+  border-radius: 999px;
+  color: #e6c577;
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.pirate-profile-identity h2 {
+  margin: 0 0 7px;
+  color: #fff9ed;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  overflow-wrap: anywhere;
+}
+
+.pirate-profile-identity p {
+  margin: 0;
+  color: #c3ced8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.pirate-profile-content {
+  padding: 30px;
+}
+
+.pirate-profile-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 23px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #d8cbb8;
+  color: #a77b25;
+}
+
+.pirate-profile-section-title h3 {
+  margin: 0 0 4px;
+  color: #10263f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+}
+
+.pirate-profile-section-title p {
+  margin: 0;
+  color: #687586;
+  font-size: 0.82rem;
+}
+
+.pirate-profile-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.pirate-profile-detail {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 13px;
+  border: 1px solid #dfd2be;
+  border-radius: 12px;
+  background: #fffaf2;
+}
+
+.pirate-profile-detail-icon {
+  display: grid;
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 10px;
+  background: #10263f0d;
+  color: #a77b25;
+}
+
+.pirate-profile-detail-text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pirate-profile-detail-text span {
+  color: #687586;
+  font-size: 0.76rem;
+}
+
+.pirate-profile-detail-text strong {
+  color: #10263f;
+  font-size: 0.9rem;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.pirate-profile-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 27px;
+  padding-top: 22px;
+  border-top: 1px solid #d8cbb8;
+}
+
+.pirate-profile-security {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #687586;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.pirate-profile-security svg {
+  flex-shrink: 0;
+  color: #1c5948;
+}
+
+.pirate-profile-logout {
+  display: inline-flex;
+  min-height: 43px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 17px;
+  border: 0;
+  border-radius: 10px;
+  background: #a83a32;
+  color: white;
+  font-size: 0.88rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.pirate-profile-logout:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #842b25;
+}
+
+.pirate-profile-logout:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.pirate-profile-note {
+  margin: 22px 0 0;
+  color: #93a8ba;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.pirate-profile-state {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #d6ae5d;
+  text-align: center;
+}
+
+.pirate-profile-state h2 {
+  margin: 0;
+  color: #fff9ed;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.pirate-profile-state p {
+  margin: 0;
+  color: #c3ced8;
+  line-height: 1.7;
+}
+
+.pirate-profile-spinner {
+  width: 38px;
+  height: 38px;
+  border: 3px solid #c89b3c35;
+  border-top-color: #d6ae5d;
+  border-radius: 50%;
+  animation: profile-spin 0.8s linear infinite;
+}
+
+.pirate-profile-retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid #c89b3c;
+  border-radius: 9px;
+  background: transparent;
+  color: #e6c577;
+  cursor: pointer;
+}
+
+@keyframes profile-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .pirate-profile-page {
+    padding: 38px 14px 50px;
+  }
+
+  .pirate-profile-banner {
+    flex-direction: column;
+    align-items: center;
+    padding: 27px 18px;
+    text-align: center;
+  }
+
+  .pirate-profile-content {
+    padding: 22px 16px;
+  }
+
+  .pirate-profile-details {
+    grid-template-columns: 1fr;
+  }
+
+  .pirate-profile-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pirate-profile-logout {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pirate-profile-page *,
+  .pirate-profile-page *::before,
+  .pirate-profile-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
